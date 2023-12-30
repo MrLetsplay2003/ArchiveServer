@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "me.mrletsplay.archiveserver.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ChunkSaveMixin",
+		"ChunkStatusMixin",
+		"EntitySaveMixin",
+		"EntityChunkDataAccessAccessor",
+		"POISaveMixin",
+		"SerializingRegionBasedStorageAccessor",
+		"ThreadedAnvilChunkStorageAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
