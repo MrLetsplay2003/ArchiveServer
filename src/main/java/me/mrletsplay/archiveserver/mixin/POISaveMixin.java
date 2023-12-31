@@ -23,7 +23,6 @@ public class POISaveMixin {
 		World world = (World) ((SerializingRegionBasedStorageAccessor) this).getWorld();
 		if(!ArchiveServer.isArchived(world.getRegistryKey().getValue())) return;
 
-		System.out.println(world.getRegistryKey().getValue().toString());
 		callback.cancel();
 	}
 

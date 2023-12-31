@@ -72,12 +72,6 @@ public class ChunkStatusMixin {
 		}else {
 			callback.setReturnValue(CompletableFuture.completedFuture(Either.left(theChunk)));
 		}
-
-//		callback.setReturnValue(ChunkHolder.UNLOADED_CHUNK_FUTURE);
-//		WorldChunk
-//		callback.setReturnValue(ChunkStatus.EMPTY.runGenerationTask(executor, world, generator, structureTemplateManager, lightingProvider, fullChunkConverter, chunks));
-//		callback.setReturnValue(CompletableFuture.completedFuture(Either.left(chunks.get(chunks.size() / 2))));
-//		callback.setReturnValue(CompletableFuture.completedFuture(Either.left(new WorldChunk(world, new ChunkPos(0, 0)))));
 	}
 
 }

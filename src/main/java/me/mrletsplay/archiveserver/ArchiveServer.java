@@ -7,8 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.StreamSupport;
 
-import org.apache.commons.lang3.stream.Streams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,7 +36,7 @@ public class ArchiveServer implements ModInitializer {
 
 			Gson gson = new Gson();
 			JsonObject object = gson.fromJson(Files.readString(WORLDS_CONFIG, StandardCharsets.UTF_8), JsonObject.class);
-			worlds = Streams.of(object.getAsJsonArray("worlds").iterator()).map(e -> e.getAsString()).toList();
+			worlds = StreamSupport.stream(object.getAsJsonArray("worlds").spliterator(), false).map(e -> e.getAsString()).toList();
 			LOGGER.info("ArchiveServer config loaded!");
 			LOGGER.info("Archived worlds: " + worlds);
 		}catch(IOException | JsonParseException e) {
